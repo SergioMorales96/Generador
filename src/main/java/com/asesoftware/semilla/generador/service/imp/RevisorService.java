@@ -22,7 +22,6 @@ public class RevisorService implements IRevisorService {
 	
 	@Override
 	public ResponseDTO getAll() {
-		// TODO Auto-generated method stub
 		return new ResponseDTO( revisorMapper.listEntityToDto( revisorRepository.findAll()), true, "ok", HttpStatus.OK);
 	}
 

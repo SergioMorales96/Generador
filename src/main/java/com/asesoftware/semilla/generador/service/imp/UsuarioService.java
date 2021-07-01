@@ -71,10 +71,15 @@ public class UsuarioService implements IUsuarioService{
 	public ResponseDTO createUser(UsuarioDTO usuarioDTO) {
 
 		try {
+			
 			UsuarioEntity usuarioEntity = mapperUsuario.dtoToEntity(usuarioDTO);
+			
 			usuarioRepository.save(usuarioEntity);
+			
 			return new ResponseDTO(mapperUsuario.entityToDto(usuarioEntity), true, "ok", HttpStatus.OK); 
+			
 		}catch (Exception e) {
+			
 			return new ResponseDTO(null, false, "No se puede crear el usuario", HttpStatus.OK); 
 		}
 
